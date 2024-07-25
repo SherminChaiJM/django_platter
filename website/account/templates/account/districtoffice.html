@@ -1,0 +1,25 @@
+{% extends 'account/base.html' %}
+{% block title %} DistrictOffice {% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">District Offices</h1>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        {% if district_offices %}
+                            <ul class="list-group">
+                                {% for district in district_offices %}
+                                    <li class="list-group-item">{{ district.name }}</li>
+                                {% endfor %}
+                            </ul>
+                        {% else %}
+                            <p class="text-center text-muted">No district offices found.</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

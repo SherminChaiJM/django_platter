@@ -1,0 +1,32 @@
+{% extends 'account/base.html' %}
+{% block title %} BranchLocation {% endblock %}
+
+{% block content %}
+    <div class="container mt-5">
+        <h1 class="text-center mb-4">Branch Locations</h1>
+        <div class="row">
+            {% for district, branches in branch_locations_by_district.items %}
+                <div class="col-md-6 mb-4">
+                    <div class="card">
+                        <div class="card-header">
+                            <h2 class="h5">{{ district.name }}</h2>
+                        </div>
+                        <div class="card-body">
+                            <ul class="list-group list-group-flush">
+                                {% for branch in branches %}
+                                    <li class="list-group-item">{{ branch.text }}</li>
+                                {% empty %}
+                                    <li class="list-group-item">No branch locations for this district.</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            {% empty %}
+                <div class="col-12">
+                    <p class="text-center">No district offices found.</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endblock %}

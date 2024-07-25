@@ -1,0 +1,23 @@
+{% extends 'account/base.html' %}
+{% block title %} DO Dashboard {% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-6 col-lg-4">
+            <h1 class="text-center mb-4">Choose Option</h1>
+
+            <div class="d-grid gap-3">
+                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{% url 'districtoffice' %}'">
+                    <i class="bi bi-geo-alt"></i> District Office
+                </button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="window.location.href='{% url 'branchlocation' %}'">
+                    <i class="bi bi-building"></i> Branch Location
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
