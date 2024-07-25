@@ -18,7 +18,7 @@
 - **Username:** `bluser`
 - **Password:** `branchlocation123`
 
-
+<br>
 
 ## Webpages and Functions
 
@@ -72,9 +72,9 @@
   - Access both `districtoffice.html` and `branchlocation.html`.
   - Navigate to the respective webpages as needed.
 
+<br>
 
-
---- IMPORTANT THINGS TO NOTE ---
--> Need to tick the correct checkbox for different users in order to gain access to the webpages
--> Required to log in to access the webpages based on the permission granted
--> Need to select which districtofficelist to add the branch location to successfully add them to the DistrictOfficeList
+### IMPORTANT THINGS TO NOTE
+- Need to tick the correct checkbox for different users in order to gain access to the webpages
+- Required to log in to access the webpages based on the permission granted
+- Need to select which districtofficelist to add the branch location to successfully add them to the DistrictOfficeList
