@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .forms import SignUpForm, LoginForm, DistrictOfficeForm, BranchLocationForm
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.decorators import login_required
-from .decorators import headoffice_required, districtoffice_required, branchlocation_required, role_required
+from .decorators import role_required
 from .models import DistrictOfficeList, BranchLocation
 
 # Create your views here.
@@ -57,13 +57,11 @@ def dashboardHO(request):
         return render(request, 'account/dashboardHO.html')
 
 @login_required
-# @headoffice_required
 @role_required('is_headoffice')
 def headoffice(request):
     return render(request, 'account/headoffice.html')
 
 @login_required
-# @districtoffice_required
 @role_required('is_headoffice', 'is_districtoffice')
 def districtoffice(request):
     district_offices = DistrictOfficeList.objects.all()
@@ -71,7 +69,6 @@ def districtoffice(request):
     return render(request, 'account/districtoffice.html', context)
 
 @login_required
-# @branchlocation_required
 @role_required('is_headoffice', 'is_districtoffice', 'is_branchlocation')
 def branchlocation(request):
     # Fetch all DistrictOfficeList entries
