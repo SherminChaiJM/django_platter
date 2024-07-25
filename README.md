@@ -1,5 +1,10 @@
 # Django Platter
 
+## Installation
+- pip install django
+- pip install django-crispy-forms
+- pip install crispy-bootstrap4
+
 ## User Credentials
 
 ### SuperUser
